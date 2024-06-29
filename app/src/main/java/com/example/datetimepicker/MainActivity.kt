@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         }
         binding.time.setOnClickListener {
             TimePickerDialog(this, { _, hour, minute ->
-                if(hour < 9 || hour > 18){
+                if((hour == 18 && minute > 0) || (hour < 9 || hour > 18)){
                     Toast.makeText(this@MainActivity,"Our Active Hours are from 9 AM to 6 PM", Toast.LENGTH_SHORT).show()
                 }
                     else{
